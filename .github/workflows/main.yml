@@ -20,7 +20,7 @@ jobs:
           python-version: '3.10' # 원하는 파이썬 버전
 
       - name: 필요한 패키지 설치
-        run: pip install openai requests beautifulsoup4
+        run: pip install openai requests beautifulsoup4 python-dotenv
 
       - name: 파이썬 스크립트 실행 (여기가 핵심!)
         env:
