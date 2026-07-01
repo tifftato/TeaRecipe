@@ -26,7 +26,11 @@ def get_latest_recipe():
     soup = BeautifulSoup(response.text, 'html.parser')
     
     # 예시: 최신 레시피 글의 태그를 찾아 제목과 링크 추출 (실제 HTML 구조에 맞춰 수정 필요)
-    latest_post = soup.find('div', class_='recipe-item') 
+    latest_post = soup.find('div', class_='article-index-recipe') 
+
+    if latest_post is None:
+        print("웹사이트에서 레시피 요소를 찾지 못했습니다.")
+        return None, None
     
     title_jp = latest_post.find('h3').text
     link = latest_post.find('a')['href']
